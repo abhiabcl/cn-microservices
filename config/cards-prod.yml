@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+cards:
+  message: "Welcome to bank cards related prod APIs"
+  contactDetails:
+    name: "card admin"
+    email: "card-prod-admin@ft.com"
+  onCallSupport:
+    - (412) 419-3491
+    - (915) 382-1932
