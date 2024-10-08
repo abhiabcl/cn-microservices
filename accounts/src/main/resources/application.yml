@@ -46,3 +46,18 @@ management:
     health:
       probes:
         enabled: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8072/eureka/
+
+info:
+  app:
+    name: "accounts"
+    description: "Accounts Application"
+    version: "1.0.02"

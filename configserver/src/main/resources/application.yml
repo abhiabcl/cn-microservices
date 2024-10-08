@@ -48,6 +48,20 @@ management:
       probes:
         enabled: true
 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8072/eureka/
+
+info:
+  app:
+    name: "configserver"
+    description: "Config server Application"
+    version: "1.0.0"
 #logging:
 #  level:
 #    org.springframework.amqp: DEBUG

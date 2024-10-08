@@ -45,3 +45,20 @@ management:
     health:
       probes:
         enabled: true
+
+
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8072/eureka/
+
+info:
+  app:
+    name: "cards"
+    description: "Cards Application"
+    version: "1.0.0"
