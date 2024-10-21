@@ -11,6 +11,8 @@ spring:
   h2:
     console:
       enabled: true
+      settings:
+        web-allow-others: true  # enable web login /h2-console
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
@@ -65,3 +67,9 @@ info:
     name: "accounts"
     description: "Accounts Application"
     version: "1.0.02"
+
+logging:
+  level:
+    com:
+      ft:
+        accounts: DEBUG
