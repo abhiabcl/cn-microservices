@@ -7,7 +7,7 @@ import com.ft.accounts.entity.Accounts;
 import com.ft.accounts.entity.Customer;
 import com.ft.accounts.exception.CustomerAlreadyExistsException;
 import com.ft.accounts.exception.ResourceNotFoundException;
-import com.ft.accounts.mapper.AccountMapper;
+import com.ft.accounts.mapper.AccountsMapper;
 import com.ft.accounts.mapper.CustomerMapper;
 import com.ft.accounts.repository.AccountsRepository;
 import com.ft.accounts.repository.CustomerRepository;
@@ -54,7 +54,7 @@ public class AccountServiceImpl implements IAccountService {
                 ()-> new ResourceNotFoundException("Account", "customerId", customer.getCustomerId().toString()));
 
         CustomerDto customerDto  = CustomerMapper.mapToCustomerDto(customer, new CustomerDto());
-        customerDto.setAccountsDto(AccountMapper.mapToAccountsDto(account, new AccountsDto()));
+        customerDto.setAccountsDto(AccountsMapper.mapToAccountsDto(account, new AccountsDto()));
 
         return customerDto;
     }
@@ -68,7 +68,7 @@ public class AccountServiceImpl implements IAccountService {
             Accounts accounts = accountsRepository.findById(accountsDto.getAccountNumber()).orElseThrow(
                     ()-> new ResourceNotFoundException("Account", "accountNumber", accountsDto.getAccountNumber().toString()));
 
-            AccountMapper.mapToAccounts(accountsDto, accounts);
+            AccountsMapper.mapToAccounts(accountsDto, accounts);
             accounts = accountsRepository.save(accounts);
 
             Long customerId = accounts.getCustomerId();

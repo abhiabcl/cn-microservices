@@ -3,6 +3,7 @@ spring:
     name: "eurekaserver"
   config:
     import: "optional:configserver:http://localhost:8071"
+
 management:
   endpoints:
     web:
@@ -13,17 +14,17 @@ management:
       enabled: true
     liveness-state:
       enabled: true
-
   endpoint:
     health:
       probes:
         enabled: true
-server:
-  port: 8072
 
-eureka:
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-  server:
-    waitTimeInMsWhenSyncEmpty: 0
+#server:
+#  port: 8070
+#
+#eureka:
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+#  server:
+#    waitTimeInMsWhenSyncEmpty: 0

@@ -3,7 +3,7 @@ package com.ft.accounts.mapper;
 import com.ft.accounts.dto.AccountsDto;
 import com.ft.accounts.entity.Accounts;
 
-public class AccountMapper {
+public class AccountsMapper {
     public static AccountsDto mapToAccountsDto(Accounts accounts, AccountsDto accountsDto) {
         accountsDto.setAccountNumber(accounts.getAccountNumber());
         accountsDto.setAccountType(accounts.getAccountType());
