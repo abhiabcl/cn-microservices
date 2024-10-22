@@ -36,7 +36,6 @@ management:
     web:
       exposure:
         include: "*"
-
   health:
     readiness-state:
       enabled: true
@@ -48,6 +47,9 @@ management:
     health:
       probes:
         enabled: true
+  info:
+    env:
+      enabled: true
 
 endpoints:
   shutdown:
