@@ -9,6 +9,9 @@ spring:
         locator:
           enabled: false  #disable default routing and enable the custom routing
           lower-case-service-id: true
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 2s
 
 management:
   endpoints:
