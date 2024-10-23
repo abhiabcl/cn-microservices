@@ -22,7 +22,10 @@ spring:
 #    active: "qa"
   config:
     import: "optional:configserver:http://localhost:8071/"
-#  cloud:
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
 #    bus:
 #      enabled: false
 
@@ -75,3 +78,10 @@ logging:
     com:
       ft:
         accounts: DEBUG
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 2
+      failureRateThreshold: 50
