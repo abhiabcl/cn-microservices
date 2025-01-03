@@ -26,14 +26,23 @@ spring:
     openfeign:
       circuitbreaker:
         enabled: true
+    function:
+      definition: updateCommunication
+    stream:
+      bindings:
+        updateCommunication-in-0:    # queue name
+          destination: communication-sent
+          group: ${spring.application.name}
+        sendCommunication-out-0:  # exchange name
+          destination: send-communication
 #    bus:
 #      enabled: false
 
-#  rabbitmq:
-#    host: "localhost"
-#    port: 5672
-#    username: "guest"
-#    password: "guest"
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 management:
   endpoints:
     web:
