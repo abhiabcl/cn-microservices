@@ -7,3 +7,16 @@ spring:
   cloud:
     function:
       definition: email|sms  #combned both function into single logical unit  i.e. http://localhost:9010/emailsms
+    stream:
+      bindings:
+        emailsms-in-0:  # function name
+          destination: send-communication   # to be queue name for this function, same queue will be in  rabbitMq
+          group: ${spring.application.name}
+        emailsms-out-0:
+          destination: communication-sent
+  rabbitmq:   # rabbitmq connection information
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10s
