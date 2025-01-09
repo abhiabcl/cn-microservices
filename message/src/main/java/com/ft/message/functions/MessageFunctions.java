@@ -18,7 +18,7 @@ public class MessageFunctions {
     public Function<AccountsMsgDto, AccountsMsgDto> email(){
         // write lamda expression  /logic for BL
         return accountsMsgDto -> {
-            // BL to log the msg when message received.
+            // BL to log the msg when message received via msg-queue, all will take care by spring cloud function _ stream
             log.info("Sending email with the details: " + accountsMsgDto.toString());
             return accountsMsgDto;
         } ;
@@ -30,7 +30,7 @@ public class MessageFunctions {
         return accountsMsgDto -> {
             // BL to log the msg when message received.
             log.info("Sending sms with the details: " + accountsMsgDto.toString());
-            return accountsMsgDto.accountNumber();
+            return accountsMsgDto.accountNumber();  // this will be sent to exchange,- spring cloud function + spring stream
         } ;
     }
 }

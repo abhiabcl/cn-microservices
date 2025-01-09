@@ -1,0 +1,17 @@
+services:
+  grafana:
+    image: grafana/grafana:9.5.2
+    container_name: grafana
+    environment:
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+#      - GF_SECURITY_ADMIN_PASSWORD=“admin”
+#      - GF_SECURITY_ADMIN_USER=“admin”
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    volumes:
+      - ./datasources:/etc/grafana/provisioning/datasources
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

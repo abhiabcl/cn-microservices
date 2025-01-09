@@ -27,11 +27,11 @@ spring:
       circuitbreaker:
         enabled: true
     function:
-      definition: updateCommunication
+      definition: updateCommunication   # it should be same as function name defiled in account micro service
     stream:
       bindings:
-        updateCommunication-in-0:    # queue name
-          destination: communication-sent
+        updateCommunication-in-0:    # queue name for updateCommunication function
+          destination: communication-sent  # same exchange defined in acccount ms, where it is sending message
           group: ${spring.application.name}
         sendCommunication-out-0:  # exchange name
           destination: send-communication
@@ -48,6 +48,11 @@ management:
     web:
       exposure:
         include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+
   health:
     readiness-state:
       enabled: true
