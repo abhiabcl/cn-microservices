@@ -23,6 +23,7 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: "http://localhost:7080/realms/master/protocol/openid-connect/certs"
+          # http://localhost:7080/realms/master/.well-known/openid-configuration - get the urls supported by auth server keycloak
 management:
   endpoints:
     web:
