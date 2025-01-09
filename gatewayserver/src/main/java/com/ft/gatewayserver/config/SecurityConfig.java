@@ -20,21 +20,20 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
         serverHttpSecurity.authorizeExchange(exchanges -> exchanges.pathMatchers(HttpMethod.GET).permitAll()
-                        .pathMatchers("/eazybank/accounts/**").authenticated()//hasRole("ACCOUNTS")
-                        .pathMatchers("/eazybank/cards/**").authenticated()//.hasRole("CARDS")
-                        .pathMatchers("/eazybank/loans/**").authenticated())//.hasRole("LOANS"))
+                        .pathMatchers("/eazybank/accounts/**").hasRole("ACCOUNTS")
+                        .pathMatchers("/eazybank/cards/**").hasRole("CARDS")
+                        .pathMatchers("/eazybank/loans/**").hasRole("LOANS"))
                 .oauth2ResourceServer(oAuth2ResourceServerSpec -> oAuth2ResourceServerSpec
-                        .jwt(Customizer.withDefaults()));
-//                        .jwt(jwtSpec -> jwtSpec.jwtAuthenticationConverter(grantedAuthoritiesExtractor())));
+                                                .jwt(jwtSpec -> jwtSpec.jwtAuthenticationConverter(grantedAuthoritiesExtractor())));
         serverHttpSecurity.csrf(csrfSpec -> csrfSpec.disable());
         return serverHttpSecurity.build();
     }
 
-//    private Converter<Jwt, Mono<AbstractAuthenticationToken>> grantedAuthoritiesExtractor() {
-//        JwtAuthenticationConverter jwtAuthenticationConverter =
-//                new JwtAuthenticationConverter();
-//        jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter
-//                (new KeycloakRoleConverter());
-//        return new ReactiveJwtAuthenticationConverterAdapter(jwtAuthenticationConverter);
-//    }
+    private Converter<Jwt, Mono<AbstractAuthenticationToken>> grantedAuthoritiesExtractor() {
+        JwtAuthenticationConverter jwtAuthenticationConverter =
+                new JwtAuthenticationConverter();
+        jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter
+                (new KeycloakRoleConverter());
+        return new ReactiveJwtAuthenticationConverterAdapter(jwtAuthenticationConverter);
+    }
 }
