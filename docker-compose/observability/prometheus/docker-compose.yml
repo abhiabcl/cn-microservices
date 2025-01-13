@@ -8,3 +8,6 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    extends:
+      file: ../common-config.yml
+      service: network-deploy-service
