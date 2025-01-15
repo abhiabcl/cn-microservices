@@ -19,8 +19,8 @@ management:
       probes:
         enabled: true
 
-#server:
-#  port: 8070
+server:
+  port: 8070
 #
 #eureka:
 #  client:
