@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts related QA APIs "
+  contactDetails:
+    name: "JohnB - QA"
+    email: "{cipher}aca79e00eb3d8c66a8dc7ffcc85db23ebcd7233dc831260009944de18cd9263c1fbc6a10278f2058a2e0ea057fc2d6f4"
+  onCallSupport:
+    - (555) 555-1234
+    - (555) 523-1345

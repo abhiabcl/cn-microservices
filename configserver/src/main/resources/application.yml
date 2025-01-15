@@ -13,8 +13,8 @@ spring:
 #          timeout: 5
 #          force-pull: true
         native:
-          search-locations: "file:///C://MyProject//Learning//sourcecode//config"
-#  #          search-locations: "classpath:/config"
+#          search-locations: "file:///C://MyProject//Learning//sourcecode//config"
+            search-locations: "classpath:/config"
 #    bus:
 #      enabled: false
 #

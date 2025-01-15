@@ -1,0 +1,9 @@
+cards:
+  message: "Welcome to bank cards related QA APIs"
+  contactDetails:
+    name: "card qa"
+    email: "card-qa-admin@ft.com"
+  onCallSupport:
+    - (412) 419-3491
+    - (915) 382-1932
+
