@@ -48,3 +48,10 @@ Build your own helm chart , that will help to deploy all the services with singl
     helm dependencies build
     helm install kafka kafka
 
+   -- Helm for prometheus
+     copy and update the values as per requried i.e. additionalScrapeConfigs - enable and make in internal
+     add the configuration for internal jobList to scrap the metrices for local MS
+
+    To view do the port forward and view the targets
+    kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0 9090:9090
+
