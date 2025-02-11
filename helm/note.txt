@@ -64,3 +64,19 @@ Build your own helm chart , that will help to deploy all the services with singl
         helm dependencies build
         helm install loki ./grafana-loki
 
+
+    -- Helm for tempo
+      copy and update the values as per required i.e. otlp ( enabled the http & grpc protocol to communicate )
+
+        helm dependencies build
+        helm install tempo .\grafana-tempo\
+
+      Extract the tempo url , that is required for micro services to send the tracing details, get the services details "tempo-grafana-tempo-distributor"
+
+        kubectl get svc
+
+       update the service name in config-map of micro services i.e. otelExporterEndPoint: http://tempo-grafana-tempo-distributor:4317
+
+
+
+
