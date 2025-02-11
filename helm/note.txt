@@ -78,5 +78,8 @@ Build your own helm chart , that will help to deploy all the services with singl
        update the service name in config-map of micro services i.e. otelExporterEndPoint: http://tempo-grafana-tempo-distributor:4317
 
 
+  -- Helm for Grafana
+     copy and update the values as per required details i.e. data sources for loki, tempo etc.
 
-
+     helm dependencies build
+     helm install grafana .\grafana\
