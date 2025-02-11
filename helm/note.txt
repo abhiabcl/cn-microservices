@@ -42,3 +42,9 @@ Build your own helm chart , that will help to deploy all the services with singl
      build it and install it.
      helm dependencies build
      helm install keycloak keycloak
+
+   -- Helm for kafka
+    copy bitnai helm chart & update the values as per requirement i..e replicaCount for controller, security SSL/PLAINTEXT
+    helm dependencies build
+    helm install kafka kafka
+
