@@ -83,3 +83,13 @@ Build your own helm chart , that will help to deploy all the services with singl
 
      helm dependencies build
      helm install grafana .\grafana\
+
+install complete solutions
+  1. keycloak - helm install keycloak keycloak
+     configure the user and roles
+  2. kafka - helm install kafka kafka
+  3. loki - helm install loki ./grafana-loki
+  4. tempo - helm install tempo ./grafana-tempo
+  5. prometheus - helm install prometheus ./kube-prometheus
+  6. grafana - helm install grafana grafana
+  7. micro-services - helm install eazybank ./prod-env

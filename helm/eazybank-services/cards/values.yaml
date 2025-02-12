@@ -1,15 +1,12 @@
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-deploymentName: charts-deployment
-serviceName: charts
-appLabel: charts
-appName: charts
+deploymentName: cards-deployment
+serviceName: cards
+appLabel: cards
+appName: cards
 
 replicaCount: 1
 
 image:
-  repository: ft/charts
+  repository: ft/cards
   tag: v1
 
 containerPort: 9000
@@ -24,4 +21,5 @@ profile_enabled: true
 config_enabled: true
 eureka_enabled: true
 resouceserver_enabled: false
-otel_enabled: true
+otel_enabled: false
+kafka_enabled: false

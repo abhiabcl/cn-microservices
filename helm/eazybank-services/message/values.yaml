@@ -12,17 +12,16 @@ image:
   repository: ft/message
   tag: v1
 
-containerPort: 8080
+containerPort: 9010
 
 service:
   type: ClusterIP
-  port: 8080
-  targetPort: 8080
+  port: 9010
+  targetPort: 9010
 
 appname_enabled: true
-profile_enabled: true
-config_enabled: true
-eureka_enabled: true
+profile_enabled: false
+config_enabled: false
+eureka_enabled: false
 resouceserver_enabled: false
-otel_enabled: true
-kafka_enabled: true
+otel_enabled: false
