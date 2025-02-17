@@ -1,0 +1,16 @@
+build:
+  version: "1.0"
+
+cards:
+  message: "Welcome to bank cards related local APIs"
+  contactDetails:
+    name: "card admin"
+    email: "card-admin@ft.com"
+  onCallSupport:
+    - (412) 419-3491
+    - (915) 382-1932
+
+logging:
+  level:
+    root: info
+

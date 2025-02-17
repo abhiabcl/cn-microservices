@@ -1,0 +1,1263 @@
+     +--------------------------------------------------------------------+
+     ¦                • MobaXterm Personal Edition v22.1 •                ¦
+     ¦              (X server, SSH client and network tools)              ¦
+     ¦                                                                    ¦
+     ¦ ? Your computer drives are accessible through the /drives path     ¦
+     ¦ ? Your DISPLAY is set to 10.152.9.92:0.0                           ¦
+     ¦ ? When using SSH, your remote DISPLAY is automatically forwarded   ¦
+     ¦ ? Each command status is specified by a special symbol (? or ?)    ¦
+     ¦                                                                    ¦
+     ¦ • Important:                                                       ¦
+     ¦ This is MobaXterm Personal Edition. The Professional edition       ¦
+     ¦ allows you to customize MobaXterm for your company: you can add    ¦
+     ¦ your own logo, your parameters, your welcome message and generate  ¦
+     ¦ either an MSI installation package or a portable executable.       ¦
+     ¦ We can also modify MobaXterm or develop the plugins you need.      ¦
+     ¦ For more information: https://mobaxterm.mobatek.net/download.html  ¦
+     +--------------------------------------------------------------------+
+
+ ? 11/02/2025 ? ? 17:19.49 ? ? /home/mobaxterm ? kubectl port-forward pod/<keycloak-pod-name> 8080:8080 -n <namespace>
+bash: syntax error near unexpected token `newline'
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:20.30 ? ? /home/mobaxterm ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              1/1     Running   0          7m33s
+keycloak-postgresql-0   1/1     Running   0          7m33s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:20.38 ? ? /home/mobaxterm ? kubectl port-forward keycloak-0 8080:8080
+Forwarding from 127.0.0.1:8080 -> 8080
+Forwarding from [::1]:8080 -> 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+E0211 17:24:13.234826   20516 portforward.go:413] an error occurred forwarding 8080 -> 8080: error forwarding port 8080 to pod c766b12baa22a49ff4c96306f47ad78742279d24fb344a03da23e738fc338dcc, uid : Erro
+r response from daemon: No such container: c766b12baa22a49ff4c96306f47ad78742279d24fb344a03da23e738fc338dcc
+E0211 17:24:13.235821   20516 portforward.go:413] an error occurred forwarding 8080 -> 8080: error forwarding port 8080 to pod c766b12baa22a49ff4c96306f47ad78742279d24fb344a03da23e738fc338dcc, uid : Erro
+r response from daemon: No such container: c766b12baa22a49ff4c96306f47ad78742279d24fb344a03da23e738fc338dcc
+error: lost connection to pod
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:24.13 ? ? /home/mobaxterm ? kubectl get pods
+NAME                      READY   STATUS    RESTARTS   AGE
+my-release-keycloak-0     1/1     Running   0          2m47s
+my-release-postgresql-0   1/1     Running   0          2m47s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:26.14 ? ? /home/mobaxterm ? kubectl port-forward my-release-keycloak-0 8080:8080
+Forwarding from 127.0.0.1:8080 -> 8080
+Forwarding from [::1]:8080 -> 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+                                                                                                                                                                                                          ?
+
+                                                                                                                                                                                                          ?
+
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:33.57 ? ? /home/mobaxterm ? kubectl get pvc
+NAME                           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+data-keycloak-postgresql-0     Bound    pvc-c2befeca-605e-497c-9b0f-ef9b90a23576   8Gi        RWO            hostpath       <unset>                 21m
+data-my-release-postgresql-0   Bound    pvc-9d5b5364-35bd-47f9-ab41-d66b5bdbb6da   8Gi        RWO            hostpath       <unset>                 10m
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:34.05 ? ? /home/mobaxterm ? kubectl delete pvc data-keycloak-postgresql-0 data-my-release-postgresql-0
+persistentvolumeclaim "data-keycloak-postgresql-0" deleted
+persistentvolumeclaim "data-my-release-postgresql-0" deleted
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:34.17 ? ? /home/mobaxterm ?
+                                                                                                                                                                                                          ?
+
+
+ ? 11/02/2025 ? ? 17:34.18 ? ? /home/mobaxterm ?
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:34.18 ? ? /home/mobaxterm ? kubectl get pvc
+No resources found in default namespace.
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:34.22 ? ? /home/mobaxterm ? kubectl get pod
+No resources found in default namespace.
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:34.26 ? ? /home/mobaxterm ?
+                                                                                                                                                                                                          ?
+
+
+ ? 11/02/2025 ? ? 17:34.26 ? ? /home/mobaxterm ?
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:34.27 ? ? /home/mobaxterm ? kubectl get pod
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              0/1     Running   0          61s
+keycloak-postgresql-0   1/1     Running   0          61s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:35.36 ? ? /home/mobaxterm ? kubectl get pod
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              1/1     Running   0          3m14s
+keycloak-postgresql-0   1/1     Running   0          3m14s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:37.49 ? ? /home/mobaxterm ? kubectl port-forward keycloak-0 8080:8080
+Forwarding from 127.0.0.1:8080 -> 8080
+Forwarding from [::1]:8080 -> 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:38.51 ? ? /home/mobaxterm ? kubectl get pod
+NAME                    READY   STATUS    RESTARTS      AGE
+keycloak-0              0/1     Running   2 (30s ago)   2m2s
+keycloak-postgresql-0   1/1     Running   0             2m2s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:41.16 ? ? /home/mobaxterm ? kubectl get pod
+NAME                    READY   STATUS             RESTARTS      AGE
+keycloak-0              0/1     CrashLoopBackOff   2 (13s ago)   2m22s
+keycloak-postgresql-0   1/1     Running            0             2m22s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:41.36 ? ? /home/mobaxterm ? kubectl get pvc
+NAME                         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+data-keycloak-postgresql-0   Bound    pvc-faf66a63-086f-460b-b783-e237aea81cf2   8Gi        RWO            hostpath       <unset>                 7m17s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:41.53 ? ? /home/mobaxterm ? kubectl delete pvc data-keycloak-postgresql-0
+persistentvolumeclaim "data-keycloak-postgresql-0" deleted
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:42.02 ? ? /home/mobaxterm ? kubectl get pod
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              0/1     Running   0          49s
+keycloak-postgresql-0   1/1     Running   0          49s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:42.55 ? ? /home/mobaxterm ? kubectl get pod
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              0/1     Running   0          74s
+keycloak-postgresql-0   1/1     Running   0          74s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:43.20 ? ? /home/mobaxterm ? kubectl get pod
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              0/1     Running   0          93s
+keycloak-postgresql-0   1/1     Running   0          93s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:43.39 ? ? /home/mobaxterm ? kubectl get pod
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              0/1     Running   0          116s
+keycloak-postgresql-0   1/1     Running   0          116s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:44.02 ? ? /home/mobaxterm ? kubectl get pod
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              1/1     Running   0          2m8s
+keycloak-postgresql-0   1/1     Running   0          2m8s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:44.14 ? ? /home/mobaxterm ? kubectl get pod
+NAME                    READY   STATUS    RESTARTS   AGE
+kafka-controller-0      1/1     Running   0          61s
+keycloak-0              1/1     Running   0          14m
+keycloak-postgresql-0   1/1     Running   0          14m
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:56.11 ? ? /home/mobaxterm ? kubectl get svc
+NAME                        TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+kafka                       ClusterIP      10.108.74.222   <none>        9092/TCP                     66s
+kafka-controller-headless   ClusterIP      None            <none>        9094/TCP,9092/TCP,9093/TCP   66s
+keycloak                    LoadBalancer   10.96.50.11     localhost     80:30661/TCP                 14m
+keycloak-headless           ClusterIP      None            <none>        8080/TCP                     14m
+keycloak-postgresql         ClusterIP      10.105.191.76   <none>        5432/TCP                     14m
+keycloak-postgresql-hl      ClusterIP      None            <none>        5432/TCP                     14m
+kubernetes                  ClusterIP      10.96.0.1       <none>        443/TCP                      73m
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:56.16 ? ? /home/mobaxterm ? kubectl get pvc
+NAME                         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+data-kafka-controller-0      Bound    pvc-355e6f6c-72ea-451d-bd35-fa7d7bf9b7a1   8Gi        RWO            hostpath       <unset>                 97s
+data-keycloak-postgresql-0   Bound    pvc-d0ce7761-0fe7-4b85-907a-48f57c70cc3b   8Gi        RWO            hostpath       <unset>                 14m
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:56.47 ? ? /home/mobaxterm ? kubectl delete pvc data-kafka-controller-0 data-keycloak-postgresql-0
+persistentvolumeclaim "data-kafka-controller-0" deleted
+persistentvolumeclaim "data-keycloak-postgresql-0" deleted
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 17:57.00 ? ? /home/mobaxterm ? kubectl get pvc
+No resources found in default namespace.
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:04.00 ? ? /home/mobaxterm ? kubectl get pods
+NAME                                                            READY   STATUS              RESTARTS   AGE
+prometheus-kube-prometheus-blackbox-exporter-785d9ffff9-h46n4   0/1     ContainerCreating   0          16s
+prometheus-kube-prometheus-operator-65c8c89cdf-tqrjr            0/1     ContainerCreating   0          16s
+prometheus-kube-state-metrics-797b95dfd-6hk8s                   0/1     ContainerCreating   0          16s
+prometheus-node-exporter-sfjnz                                  0/1     Running             0          16s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:04.06 ? ? /home/mobaxterm ? kubectl get pods
+NAME                                                            READY   STATUS    RESTARTS   AGE
+alertmanager-prometheus-kube-prometheus-alertmanager-0          0/2     Running   0          27s
+prometheus-kube-prometheus-blackbox-exporter-785d9ffff9-h46n4   0/1     Running   0          45s
+prometheus-kube-prometheus-operator-65c8c89cdf-tqrjr            0/1     Running   0          45s
+prometheus-kube-state-metrics-797b95dfd-6hk8s                   0/1     Running   0          45s
+prometheus-node-exporter-sfjnz                                  1/1     Running   0          45s
+prometheus-prometheus-kube-prometheus-prometheus-0              0/2     Running   0          27s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:04.35 ? ? /home/mobaxterm ?  kubectl port-forward keycloak-0 8080:8080
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:04.53 ? ? /home/mobaxterm ? kubectl get svc
+NAME                                           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+alertmanager-operated                          ClusterIP   None             <none>        9093/TCP,9094/TCP,9094/UDP   54s
+kubernetes                                     ClusterIP   10.96.0.1        <none>        443/TCP                      82m
+prometheus-kube-prometheus-alertmanager        ClusterIP   10.103.144.254   <none>        9093/TCP                     72s
+prometheus-kube-prometheus-blackbox-exporter   ClusterIP   10.107.21.91     <none>        19115/TCP                    72s
+prometheus-kube-prometheus-operator            ClusterIP   10.107.82.199    <none>        8080/TCP                     72s
+prometheus-kube-prometheus-prometheus          ClusterIP   10.99.230.112    <none>        9090/TCP                     72s
+prometheus-kube-state-metrics                  ClusterIP   10.109.248.75    <none>        8080/TCP                     72s
+prometheus-node-exporter                       ClusterIP   10.110.60.12     <none>        9100/TCP                     72s
+prometheus-operated                            ClusterIP   None             <none>        9090/TCP                     54s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:05.02 ? ? /home/mobaxterm ? kubectl port-forward prometheus-kube-prometheus-prometheus 9090:9090
+Error from server (NotFound): pods "prometheus-kube-prometheus-prometheus" not found
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:06.16 ? ? /home/mobaxterm ? kubectl get pod
+NAME                                                            READY   STATUS    RESTARTS   AGE
+alertmanager-prometheus-kube-prometheus-alertmanager-0          2/2     Running   0          2m20s
+prometheus-kube-prometheus-blackbox-exporter-785d9ffff9-h46n4   1/1     Running   0          2m38s
+prometheus-kube-prometheus-operator-65c8c89cdf-tqrjr            1/1     Running   0          2m38s
+prometheus-kube-state-metrics-797b95dfd-6hk8s                   1/1     Running   0          2m38s
+prometheus-node-exporter-sfjnz                                  1/1     Running   0          2m38s
+prometheus-prometheus-kube-prometheus-prometheus-0              2/2     Running   0          2m20s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:06.28 ? ? /home/mobaxterm ? kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0 9090:9090
+Forwarding from 127.0.0.1:9090 -> 9090
+Forwarding from [::1]:9090 -> 9090
+Handling connection for 9090
+Handling connection for 9090
+Handling connection for 9090
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:07.44 ? ? /home/mobaxterm ? helm get list
+
+This command consists of multiple subcommands which can be used to
+get extended information about the release, including:
+
+- The values used to generate the release
+- The generated manifest file
+- The notes provided by the chart of the release
+- The hooks associated with the release
+- The metadata of the release
+
+Usage:
+  helm get [command]
+
+Available Commands:
+  all         download all information for a named release
+  hooks       download all hooks for a named release
+  manifest    download the manifest for a named release
+  metadata    This command fetches metadata for a given release
+  notes       download the notes for a named release
+  values      download the values file for a named release
+
+Flags:
+  -h, --help   help for get
+
+Global Flags:
+      --burst-limit int                 client-side default throttling limit (default 100)
+      --debug                           enable verbose output
+      --kube-apiserver string           the address and the port for the Kubernetes API server
+      --kube-as-group stringArray       group to impersonate for the operation, this flag can be repeated to specify multiple groups.
+      --kube-as-user string             username to impersonate for the operation
+      --kube-ca-file string             the certificate authority file for the Kubernetes API server connection
+      --kube-context string             name of the kubeconfig context to use
+      --kube-insecure-skip-tls-verify   if true, the Kubernetes API server's certificate will not be checked for validity. This will make your HTTPS connections insecure
+      --kube-tls-server-name string     server name to use for Kubernetes API server certificate validation. If it is not provided, the hostname used to contact the server is used
+      --kube-token string               bearer token used for authentication
+      --kubeconfig string               path to the kubeconfig file
+  -n, --namespace string                namespace scope for this request
+      --qps float32                     queries per second used when communicating with the Kubernetes API, not including bursting
+      --registry-config string          path to the registry config file (default "C:\\Users\\etbdefi\\AppData\\Roaming\\helm\\registry\\config.json")
+      --repository-cache string         path to the directory containing cached repository indexes (default "C:\\Users\\etbdefi\\AppData\\Roaming\\MOBAXT~1\\slash\\tmp\\helm\\repository")
+      --repository-config string        path to the file containing repository names and URLs (default "C:\\Users\\etbdefi\\AppData\\Roaming\\helm\\repositories.yaml")
+
+Use "helm get [command] --help" for more information about a command.
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:07.50 ? ? /home/mobaxterm ? helm get
+
+This command consists of multiple subcommands which can be used to
+get extended information about the release, including:
+
+- The values used to generate the release
+- The generated manifest file
+- The notes provided by the chart of the release
+- The hooks associated with the release
+- The metadata of the release
+
+Usage:
+  helm get [command]
+
+Available Commands:
+  all         download all information for a named release
+  hooks       download all hooks for a named release
+  manifest    download the manifest for a named release
+  metadata    This command fetches metadata for a given release
+  notes       download the notes for a named release
+  values      download the values file for a named release
+
+Flags:
+  -h, --help   help for get
+
+Global Flags:
+      --burst-limit int                 client-side default throttling limit (default 100)
+      --debug                           enable verbose output
+      --kube-apiserver string           the address and the port for the Kubernetes API server
+      --kube-as-group stringArray       group to impersonate for the operation, this flag can be repeated to specify multiple groups.
+      --kube-as-user string             username to impersonate for the operation
+      --kube-ca-file string             the certificate authority file for the Kubernetes API server connection
+      --kube-context string             name of the kubeconfig context to use
+      --kube-insecure-skip-tls-verify   if true, the Kubernetes API server's certificate will not be checked for validity. This will make your HTTPS connections insecure
+      --kube-tls-server-name string     server name to use for Kubernetes API server certificate validation. If it is not provided, the hostname used to contact the server is used
+      --kube-token string               bearer token used for authentication
+      --kubeconfig string               path to the kubeconfig file
+  -n, --namespace string                namespace scope for this request
+      --qps float32                     queries per second used when communicating with the Kubernetes API, not including bursting
+      --registry-config string          path to the registry config file (default "C:\\Users\\etbdefi\\AppData\\Roaming\\helm\\registry\\config.json")
+      --repository-cache string         path to the directory containing cached repository indexes (default "C:\\Users\\etbdefi\\AppData\\Roaming\\MOBAXT~1\\slash\\tmp\\helm\\repository")
+      --repository-config string        path to the file containing repository names and URLs (default "C:\\Users\\etbdefi\\AppData\\Roaming\\helm\\repositories.yaml")
+
+Use "helm get [command] --help" for more information about a command.
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:07.54 ? ? /home/mobaxterm ? helm list
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+prometheus      default         1               2025-02-11 18:03:48.5863315 -0500 EST   deployed        kube-prometheus-11.0.2  0.80.0
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:07.59 ? ? /home/mobaxterm ? helm delete prometheus
+release "prometheus" uninstalled
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:08.11 ? ? /home/mobaxterm ? kubctl get svc
+kubctl: command not found
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:17.21 ? ? /home/mobaxterm ? kubectl get svc
+NAME                                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                                                                       AGE
+kubernetes                                    ClusterIP   10.96.0.1       <none>        443/TCP                                                                       94m
+tempo-grafana-tempo-compactor                 ClusterIP   10.98.245.203   <none>        3200/TCP,9095/TCP                                                             102s
+tempo-grafana-tempo-distributor               ClusterIP   10.102.206.49   <none>        3200/TCP,9095/TCP,14268/TCP,14250/TCP,4318/TCP,55681/TCP,4317/TCP,55680/TCP   102s
+tempo-grafana-tempo-gossip-ring               ClusterIP   None            <none>        7946/TCP                                                                      102s
+tempo-grafana-tempo-ingester                  ClusterIP   10.108.15.195   <none>        3200/TCP,9095/TCP                                                             102s
+tempo-grafana-tempo-metrics-generator         ClusterIP   10.98.153.77    <none>        3200/TCP,9095/TCP                                                             102s
+tempo-grafana-tempo-querier                   ClusterIP   10.107.81.126   <none>        3200/TCP,9095/TCP                                                             102s
+tempo-grafana-tempo-query-frontend            ClusterIP   10.98.15.10     <none>        3200/TCP,9095/TCP                                                             102s
+tempo-grafana-tempo-query-frontend-headless   ClusterIP   None            <none>        3200/TCP,9095/TCP                                                             102s
+tempo-grafana-tempo-vulture                   ClusterIP   10.103.160.25   <none>        3200/TCP                                                                      102s
+tempo-memcached                               ClusterIP   10.107.72.61    <none>        11211/TCP                                                                     102s
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:17.27 ? ? /home/mobaxterm ? kubecl get pod
+kubecl: command not found
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:25.47 ? ? /home/mobaxterm ? kubectl get pod
+NAME                                                    READY   STATUS              RESTARTS        AGE
+grafana-d9c94bd94-dsgwr                                 0/1     ContainerCreating   0               23s
+tempo-grafana-tempo-compactor-5f9c678b7f-zd28c          1/1     Running             1 (9m52s ago)   10m
+tempo-grafana-tempo-distributor-767dc78df6-v4qg8        1/1     Running             0               10m
+tempo-grafana-tempo-ingester-0                          1/1     Running             0               10m
+tempo-grafana-tempo-metrics-generator-d885b6dd8-dkbth   1/1     Running             0               10m
+tempo-grafana-tempo-querier-54b6d6f86c-8dm6t            1/1     Running             0               10m
+tempo-grafana-tempo-query-frontend-945bbb6b7-xmqpp      1/1     Running             0               10m
+tempo-grafana-tempo-vulture-666445874b-dgbtw            1/1     Running             0               10m
+tempo-memcached-75cbd584cf-dnhqh                        1/1     Running             0               10m
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:25.52 ? ? /home/mobaxterm ?  kubectl port-forward svc/grafana 8080:3000
+Forwarding from 127.0.0.1:8080 -> 3000
+Forwarding from [::1]:8080 -> 3000
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:28.41 ? ? /home/mobaxterm ? helm ls
+NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+grafana default         1               2025-02-11 18:25:28.7361903 -0500 EST   deployed        grafana-11.4.7          11.5.1
+tempo   default         1               2025-02-11 18:15:44.8225376 -0500 EST   deployed        grafana-tempo-3.8.5     2.7.0
+                                                                                                                                                                                                          ?
+
+ ? 11/02/2025 ? ? 18:28.52 ? ? /home/mobaxterm ? clear
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:18.41 ? ? /home/mobaxterm ? cd /
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:18.49 ? ? / ? dir
+CygUtilsLicenses.html  bin                    dev                    etc                    lib                    mnt                    opt                    registry               src                    usr
+RemoteFiles            cygdrive               drives                 home                   media                  mx86_64b               proc                   sbin                   tmp                    var
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:18.56 ? ? / ? cd cygdrive/c/MyProject/Learning/sourcecode/helm/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:19.12 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm install keycloak keycloak/
+NAME: keycloak
+LAST DEPLOYED: Wed Feb 12 09:25:50 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: keycloak
+CHART VERSION: 24.4.9
+APP VERSION: 26.1.1
+
+Did you know there are enterprise versions of the Bitnami catalog? For enhanced secure software supply chain features, unlimited pulls from Docker, LTS support, or application customization, see Bitnami Premium or Tanzu Application Catalog. See https://www.arrow.com/globalecs/na/vendors/bitnami for more information.
+
+** Please be patient while the chart is being deployed **
+
+Keycloak can be accessed through the following DNS name from within your cluster:
+
+    keycloak.default.svc.cluster.local (port 80)
+
+To access Keycloak from outside the cluster execute the following commands:
+
+1. Get the Keycloak URL by running these commands:
+
+  NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+        You can watch its status by running 'kubectl get --namespace default svc -w keycloak'
+
+    export HTTP_SERVICE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[?(@.name=='http')].port}" services keycloak)
+    export SERVICE_IP=$(kubectl get svc --namespace default keycloak -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+
+    echo "http://${SERVICE_IP}:${HTTP_SERVICE_PORT}/"
+
+2. Access Keycloak using the obtained URL.
+3. Access the Administration Console using the following credentials:
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace default keycloak -o jsonpath="{.data.admin-password}" | base64 -d)
+
+WARNING: There are "resources" sections in the chart not set. Using "resourcesPreset" is not recommended for production. For production installations, please set the following values according to your workload needs:
+  - resources
++info https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:25.51 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm list
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+keycloak        default         1               2025-02-12 09:25:50.4021362 -0500 EST   deployed        keycloak-24.4.9 26.1.1
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:29.07 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm delete keycloak
+release "keycloak" uninstalled
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:29.17 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm install keycloak keycloak/
+NAME: keycloak
+LAST DEPLOYED: Wed Feb 12 09:31:09 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: keycloak
+CHART VERSION: 24.4.9
+APP VERSION: 26.1.1
+
+Did you know there are enterprise versions of the Bitnami catalog? For enhanced secure software supply chain features, unlimited pulls from Docker, LTS support, or application customization, see Bitnami Premium or Tanzu Application Catalog. See https://www.arrow.com/globalecs/na/vendors/bitnami for more information.
+
+** Please be patient while the chart is being deployed **
+
+Keycloak can be accessed through the following DNS name from within your cluster:
+
+    keycloak.default.svc.cluster.local (port 80)
+
+To access Keycloak from outside the cluster execute the following commands:
+
+1. Get the Keycloak URL by running these commands:
+
+  NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+        You can watch its status by running 'kubectl get --namespace default svc -w keycloak'
+
+    export HTTP_SERVICE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[?(@.name=='http')].port}" services keycloak)
+    export SERVICE_IP=$(kubectl get svc --namespace default keycloak -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+
+    echo "http://${SERVICE_IP}:${HTTP_SERVICE_PORT}/"
+
+2. Access Keycloak using the obtained URL.
+3. Access the Administration Console using the following credentials:
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace default keycloak -o jsonpath="{.data.admin-password}" | base64 -d)
+
+WARNING: There are "resources" sections in the chart not set. Using "resourcesPreset" is not recommended for production. For production installations, please set the following values according to your workload needs:
+  - resources
++info https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:31.10 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm delete keycloak
+release "keycloak" uninstalled
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:33.19 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm delete keycloak
+release "keycloak" uninstalled
+                                                                                                                                                                                                                                        ?
+ ? 12/02/2025 ? ? 09:37.12 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm install keycloak keycloak/
+NAME: keycloak
+LAST DEPLOYED: Wed Feb 12 09:37:16 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: keycloak
+CHART VERSION: 24.4.9
+APP VERSION: 26.1.1
+
+Did you know there are enterprise versions of the Bitnami catalog? For enhanced secure software supply chain features, unlimited pulls from Docker, LTS support, or application customization, see Bitnami Premium or Tanzu Application Catalog. See https://www.arrow.com/globalecs/na/vendors/bitnami for more information.
+
+** Please be patient while the chart is being deployed **
+
+Keycloak can be accessed through the following DNS name from within your cluster:
+
+    keycloak.default.svc.cluster.local (port 80)
+
+To access Keycloak from outside the cluster execute the following commands:
+
+1. Get the Keycloak URL by running these commands:
+
+  NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+        You can watch its status by running 'kubectl get --namespace default svc -w keycloak'
+
+    export HTTP_SERVICE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[?(@.name=='http')].port}" services keycloak)
+    export SERVICE_IP=$(kubectl get svc --namespace default keycloak -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+
+    echo "http://${SERVICE_IP}:${HTTP_SERVICE_PORT}/"
+
+2. Access Keycloak using the obtained URL.
+3. Access the Administration Console using the following credentials:
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace default keycloak -o jsonpath="{.data.admin-password}" | base64 -d)
+
+WARNING: There are "resources" sections in the chart not set. Using "resourcesPreset" is not recommended for production. For production installations, please set the following values according to your workload needs:
+  - resources
++info https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:37.17 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm list
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+keycloak        default         1               2025-02-12 09:37:16.1940722 -0500 EST   deployed        keycloak-24.4.9 26.1.1
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:38.03 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              0/1     Running   0          53s
+keycloak-postgresql-0   1/1     Running   0          53s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:38.10 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS      AGE
+keycloak-0              0/1     Running   2 (21s ago)   2m41s
+keycloak-postgresql-0   1/1     Running   0             2m41s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:39.58 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get secret keycloak-postgresql -o json | jq '.data|map_values(@base64d)'
+parse error: Invalid numeric literal at line 1, column 2
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:44.42 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectk get secret
+kubectk: command not found
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:44.53 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get secret
+NAME                             TYPE                 DATA   AGE
+keycloak                         Opaque               1      7m46s
+keycloak-postgresql              Opaque               2      7m46s
+sh.helm.release.v1.keycloak.v1   helm.sh/release.v1   1      7m46s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:45.02 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ?
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:45.05 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm list
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+keycloak        default         1               2025-02-12 09:37:16.1940722 -0500 EST   deployed        keycloak-24.4.9 26.1.1
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:45.14 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm delete keycloak
+release "keycloak" uninstalled
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:45.24 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pvc
+NAME                         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+data-keycloak-postgresql-0   Bound    pvc-7fbf55b9-e225-4016-84e8-e4c2bfe89b08   8Gi        RWO            hostpath       <unset>                 11m
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:45.34 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl delete                                                                                                                             
+                                                                                                                                                                                                                                        ?
+ ? 12/02/2025 ? ? 09:45.45 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl delete pvc data-keycloak-postgresql-0
+persistentvolumeclaim "data-keycloak-postgresql-0" deleted
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:45.55 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get secret
+No resources found in default namespace.
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:47.01 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm install keycloak keycloak/
+NAME: keycloak
+LAST DEPLOYED: Wed Feb 12 09:47:23 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: keycloak
+CHART VERSION: 24.4.9
+APP VERSION: 26.1.1
+
+Did you know there are enterprise versions of the Bitnami catalog? For enhanced secure software supply chain features, unlimited pulls from Docker, LTS support, or application customization, see Bitnami Premium or Tanzu Application Catalog. See https://www.arrow.com/globalecs/na/vendors/bitnami for more information.
+
+** Please be patient while the chart is being deployed **
+
+Keycloak can be accessed through the following DNS name from within your cluster:
+
+    keycloak.default.svc.cluster.local (port 80)
+
+To access Keycloak from outside the cluster execute the following commands:
+
+1. Get the Keycloak URL by running these commands:
+
+  NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+        You can watch its status by running 'kubectl get --namespace default svc -w keycloak'
+
+    export HTTP_SERVICE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[?(@.name=='http')].port}" services keycloak)
+    export SERVICE_IP=$(kubectl get svc --namespace default keycloak -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+
+    echo "http://${SERVICE_IP}:${HTTP_SERVICE_PORT}/"
+
+2. Access Keycloak using the obtained URL.
+3. Access the Administration Console using the following credentials:
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace default keycloak -o jsonpath="{.data.admin-password}" | base64 -d)
+
+WARNING: There are "resources" sections in the chart not set. Using "resourcesPreset" is not recommended for production. For production installations, please set the following values according to your workload needs:
+  - resources
++info https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:47.24 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kuebctl get pods
+kuebctl: command not found
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:47.30 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              0/1     Running   0          13s
+keycloak-postgresql-0   1/1     Running   0          13s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:47.37 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              0/1     Running   0          70s
+keycloak-postgresql-0   1/1     Running   0          70s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:48.34 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              0/1     Running   0          103s
+keycloak-postgresql-0   1/1     Running   0          103s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:49.08 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pvc
+NAME                         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+data-keycloak-postgresql-0   Bound    pvc-144cc313-de94-4746-a2de-6132a0235cdb   8Gi        RWO            hostpath       <unset>                 113s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:49.17 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get svc
+NAME                     TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+keycloak                 LoadBalancer   10.105.64.152   localhost     80:31166/TCP   2m
+keycloak-headless        ClusterIP      None            <none>        8080/TCP       2m
+keycloak-postgresql      ClusterIP      10.99.57.227    <none>        5432/TCP       2m
+keycloak-postgresql-hl   ClusterIP      None            <none>        5432/TCP       2m
+kubernetes               ClusterIP      10.96.0.1       <none>        443/TCP        2m32s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:49.24 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              0/1     Running   0          2m32s
+keycloak-postgresql-0   1/1     Running   0          2m32s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:49.56 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              0/1     Running   0          3m25s
+keycloak-postgresql-0   1/1     Running   0          3m25s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 09:50.49 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+keycloak-0              1/1     Running   0          24m
+keycloak-postgresql-0   1/1     Running   0          24m
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:11.25 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm install kafka kafka/
+NAME: kafka
+LAST DEPLOYED: Wed Feb 12 10:34:22 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: kafka
+CHART VERSION: 31.3.1
+APP VERSION: 3.9.0
+
+Did you know there are enterprise versions of the Bitnami catalog? For enhanced secure software supply chain features, unlimited pulls from Docker, LTS support, or application customization, see Bitnami Premium or Tanzu Application Catalog. See https://www.arrow.com/globalecs/na/vendors/bitnami for more information.
+
+** Please be patient while the chart is being deployed **
+
+Kafka can be accessed by consumers via port 9092 on the following DNS name from within your cluster:
+
+    kafka.default.svc.cluster.local
+
+Each Kafka broker can be accessed by producers via port 9092 on the following DNS name(s) from within your cluster:
+
+    kafka-controller-0.kafka-controller-headless.default.svc.cluster.local:9092
+
+To create a pod that you can use as a Kafka client run the following commands:
+
+    kubectl run kafka-client --restart='Never' --image docker.io/bitnami/kafka:3.9.0-debian-12-r6 --namespace default --command -- sleep infinity
+    kubectl exec --tty -i kafka-client --namespace default -- bash
+
+    PRODUCER:
+        kafka-console-producer.sh \
+            --bootstrap-server kafka.default.svc.cluster.local:9092 \
+            --topic test
+
+    CONSUMER:
+        kafka-console-consumer.sh \
+            --bootstrap-server kafka.default.svc.cluster.local:9092 \
+            --topic test \
+            --from-beginning
+
+WARNING: There are "resources" sections in the chart not set. Using "resourcesPreset" is not recommended for production. For production installations, please set the following values according to your workload needs:
+  - controller.resources
++info https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:34.23 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ?
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:34.25 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+kafka-controller-0      0/1     Running   0          10s
+keycloak-0              1/1     Running   0          47m
+keycloak-postgresql-0   1/1     Running   0          47m
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:34.33 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+kafka-controller-0      0/1     Running   0          17s
+keycloak-0              1/1     Running   0          47m
+keycloak-postgresql-0   1/1     Running   0          47m
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:34.40 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+kafka-controller-0      0/1     Running   0          22s
+keycloak-0              1/1     Running   0          47m
+keycloak-postgresql-0   1/1     Running   0          47m
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:34.45 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+kafka-controller-0      1/1     Running   0          26s
+keycloak-0              1/1     Running   0          47m
+keycloak-postgresql-0   1/1     Running   0          47m
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:34.49 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm install loki grafana-loki/
+NAME: loki
+LAST DEPLOYED: Wed Feb 12 10:35:13 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: grafana-loki
+CHART VERSION: 4.7.4
+APP VERSION: 3.3.2
+
+Did you know there are enterprise versions of the Bitnami catalog? For enhanced secure software supply chain features, unlimited pulls from Docker, LTS support, or application customization, see Bitnami Premium or Tanzu Application Catalog. See https://www.arrow.com/globalecs/na/vendors/bitnami for more information.
+
+** Please be patient while the chart is being deployed **
+
+Installed components:
+
+  * ingester
+  * distributor
+  * querier
+  * query-frontend
+  * promtail
+  * compactor
+  * gateway
+
+1. Get the gateway URL by running these commands:
+    echo "The Gateway is available at http://127.0.0.1:80"
+    kubectl port-forward svc/loki-grafana-loki-gateway 80:80 &
+
+WARNING: There are "resources" sections in the chart not set. Using "resourcesPreset" is not recommended for production. For production installations, please set the following values according to your workload needs:
+  - compactor.resources
+  - distributor.resources
+  - gateway.resources
+  - ingester.resources
+  - promtail.resources
+  - querier.resources
+  - queryFrontend.resources
+  - queryScheduler.resources
++info https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:35.16 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ?
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:35.18 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                                                READY   STATUS    RESTARTS   AGE
+kafka-controller-0                                  1/1     Running   0          62s
+keycloak-0                                          1/1     Running   0          48m
+keycloak-postgresql-0                               1/1     Running   0          48m
+loki-grafana-loki-compactor-64796d9995-lqrgq        0/1     Running   0          9s
+loki-grafana-loki-distributor-f7f74c6-gn2j9         0/1     Running   0          9s
+loki-grafana-loki-gateway-784f78b59d-fj86q          0/1     Running   0          9s
+loki-grafana-loki-ingester-0                        0/1     Running   0          9s
+loki-grafana-loki-promtail-gfjnt                    0/1     Running   0          9s
+loki-grafana-loki-querier-0                         0/1     Running   0          9s
+loki-grafana-loki-query-frontend-6ddbd95dd9-j7zpl   0/1     Running   0          9s
+loki-memcachedchunks-0                              1/1     Running   0          9s
+loki-memcachedfrontend-0                            1/1     Running   0          9s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:35.25 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                                                READY   STATUS    RESTARTS   AGE
+kafka-controller-0                                  1/1     Running   0          104s
+keycloak-0                                          1/1     Running   0          48m
+keycloak-postgresql-0                               1/1     Running   0          48m
+loki-grafana-loki-compactor-64796d9995-lqrgq        0/1     Running   0          51s
+loki-grafana-loki-distributor-f7f74c6-gn2j9         1/1     Running   0          51s
+loki-grafana-loki-gateway-784f78b59d-fj86q          1/1     Running   0          51s
+loki-grafana-loki-ingester-0                        1/1     Running   0          51s
+loki-grafana-loki-promtail-gfjnt                    1/1     Running   0          51s
+loki-grafana-loki-querier-0                         1/1     Running   0          51s
+loki-grafana-loki-query-frontend-6ddbd95dd9-j7zpl   1/1     Running   0          51s
+loki-memcachedchunks-0                              1/1     Running   0          51s
+loki-memcachedfrontend-0                            1/1     Running   0          51s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:36.07 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                                                READY   STATUS    RESTARTS   AGE
+kafka-controller-0                                  1/1     Running   0          117s
+keycloak-0                                          1/1     Running   0          48m
+keycloak-postgresql-0                               1/1     Running   0          48m
+loki-grafana-loki-compactor-64796d9995-lqrgq        0/1     Running   0          64s
+loki-grafana-loki-distributor-f7f74c6-gn2j9         1/1     Running   0          64s
+loki-grafana-loki-gateway-784f78b59d-fj86q          1/1     Running   0          64s
+loki-grafana-loki-ingester-0                        1/1     Running   0          64s
+loki-grafana-loki-promtail-gfjnt                    1/1     Running   0          64s
+loki-grafana-loki-querier-0                         1/1     Running   0          64s
+loki-grafana-loki-query-frontend-6ddbd95dd9-j7zpl   1/1     Running   0          64s
+loki-memcachedchunks-0                              1/1     Running   0          64s
+loki-memcachedfrontend-0                            1/1     Running   0          64s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:36.20 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                                                READY   STATUS    RESTARTS   AGE
+kafka-controller-0                                  1/1     Running   0          2m22s
+keycloak-0                                          1/1     Running   0          49m
+keycloak-postgresql-0                               1/1     Running   0          49m
+loki-grafana-loki-compactor-64796d9995-lqrgq        1/1     Running   0          89s
+loki-grafana-loki-distributor-f7f74c6-gn2j9         1/1     Running   0          89s
+loki-grafana-loki-gateway-784f78b59d-fj86q          1/1     Running   0          89s
+loki-grafana-loki-ingester-0                        1/1     Running   0          89s
+loki-grafana-loki-promtail-gfjnt                    1/1     Running   0          89s
+loki-grafana-loki-querier-0                         1/1     Running   0          89s
+loki-grafana-loki-query-frontend-6ddbd95dd9-j7zpl   1/1     Running   0          89s
+loki-memcachedchunks-0                              1/1     Running   0          89s
+loki-memcachedfrontend-0                            1/1     Running   0          89s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:36.45 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm install tempo grafana-tempo/
+NAME: tempo
+LAST DEPLOYED: Wed Feb 12 10:36:57 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: grafana-tempo
+CHART VERSION: 3.8.5
+APP VERSION: 2.7.0
+
+Did you know there are enterprise versions of the Bitnami catalog? For enhanced secure software supply chain features, unlimited pulls from Docker, LTS support, or application customization, see Bitnami Premium or Tanzu Application Catalog. See https://www.arrow.com/globalecs/na/vendors/bitnami for more information.
+
+** Please be patient while the chart is being deployed **
+
+Installed components:
+
+  * ingester
+  * distributor
+  * querier
+  * query-frontend
+  * compactor
+  * vulture
+
+1. Get the query-frontend URL by running these commands:
+    echo "The Query Frontend is available at http://127.0.0.1:3200"
+    kubectl port-forward svc/tempo-grafana-tempo-query-frontend 3200:3200 &
+
+WARNING: There are "resources" sections in the chart not set. Using "resourcesPreset" is not recommended for production. For production installations, please set the following values according to your workload needs:
+  - compactor.resources
+  - distributor.resources
+  - ingester.resources
+  - metricsGenerator.resources
+  - querier.resources
+  - queryFrontend.resources
+  - vulture.resources
++info https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:37.01 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ?
+                                                                                                                                                                                                                                        ?
+hel
+ ? 12/02/2025 ? ? 10:37.03 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm list
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+kafka           default         1               2025-02-12 10:34:22.9770202 -0500 EST   deployed        kafka-31.3.1            3.9.0
+keycloak        default         1               2025-02-12 09:47:23.1955826 -0500 EST   deployed        keycloak-24.4.9         26.1.1
+loki            default         1               2025-02-12 10:35:13.9300704 -0500 EST   deployed        grafana-loki-4.7.4      3.3.2
+tempo           default         1               2025-02-12 10:36:57.6037035 -0500 EST   deployed        grafana-tempo-3.8.5     2.7.0
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:37.08 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                                                    READY   STATUS    RESTARTS   AGE
+kafka-controller-0                                      1/1     Running   0          2m54s
+keycloak-0                                              1/1     Running   0          49m
+keycloak-postgresql-0                                   1/1     Running   0          49m
+loki-grafana-loki-compactor-64796d9995-lqrgq            1/1     Running   0          2m1s
+loki-grafana-loki-distributor-f7f74c6-gn2j9             1/1     Running   0          2m1s
+loki-grafana-loki-gateway-784f78b59d-fj86q              1/1     Running   0          2m1s
+loki-grafana-loki-ingester-0                            1/1     Running   0          2m1s
+loki-grafana-loki-promtail-gfjnt                        1/1     Running   0          2m1s
+loki-grafana-loki-querier-0                             1/1     Running   0          2m1s
+loki-grafana-loki-query-frontend-6ddbd95dd9-j7zpl       1/1     Running   0          2m1s
+loki-memcachedchunks-0                                  1/1     Running   0          2m1s
+loki-memcachedfrontend-0                                1/1     Running   0          2m1s
+tempo-grafana-tempo-compactor-5f9c678b7f-vqh8v          0/1     Running   0          16s
+tempo-grafana-tempo-distributor-767dc78df6-rqbs4        0/1     Running   0          16s
+tempo-grafana-tempo-ingester-0                          0/1     Running   0          16s
+tempo-grafana-tempo-metrics-generator-d885b6dd8-t7phq   0/1     Running   0          16s
+tempo-grafana-tempo-querier-54b6d6f86c-8vhmg            0/1     Running   0          16s
+tempo-grafana-tempo-query-frontend-945bbb6b7-lvr7j      0/1     Running   0          16s
+tempo-grafana-tempo-vulture-666445874b-cphrr            0/1     Running   0          16s
+tempo-memcached-75cbd584cf-p96n5                        1/1     Running   0          16s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:37.17 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                                                    READY   STATUS    RESTARTS   AGE
+kafka-controller-0                                      1/1     Running   0          4m22s
+keycloak-0                                              1/1     Running   0          51m
+keycloak-postgresql-0                                   1/1     Running   0          51m
+loki-grafana-loki-compactor-64796d9995-lqrgq            1/1     Running   0          3m29s
+loki-grafana-loki-distributor-f7f74c6-gn2j9             1/1     Running   0          3m29s
+loki-grafana-loki-gateway-784f78b59d-fj86q              1/1     Running   0          3m29s
+loki-grafana-loki-ingester-0                            1/1     Running   0          3m29s
+loki-grafana-loki-promtail-gfjnt                        1/1     Running   0          3m29s
+loki-grafana-loki-querier-0                             1/1     Running   0          3m29s
+loki-grafana-loki-query-frontend-6ddbd95dd9-j7zpl       1/1     Running   0          3m29s
+loki-memcachedchunks-0                                  1/1     Running   0          3m29s
+loki-memcachedfrontend-0                                1/1     Running   0          3m29s
+tempo-grafana-tempo-compactor-5f9c678b7f-vqh8v          1/1     Running   0          104s
+tempo-grafana-tempo-distributor-767dc78df6-rqbs4        1/1     Running   0          104s
+tempo-grafana-tempo-ingester-0                          1/1     Running   0          104s
+tempo-grafana-tempo-metrics-generator-d885b6dd8-t7phq   1/1     Running   0          104s
+tempo-grafana-tempo-querier-54b6d6f86c-8vhmg            1/1     Running   0          104s
+tempo-grafana-tempo-query-frontend-945bbb6b7-lvr7j      1/1     Running   0          104s
+tempo-grafana-tempo-vulture-666445874b-cphrr            1/1     Running   0          104s
+tempo-memcached-75cbd584cf-p96n5                        1/1     Running   0          104s
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:38.45 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ?
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:38.48 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm install prometheus kube-prometheus/
+NAME: prometheus
+LAST DEPLOYED: Wed Feb 12 10:39:20 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: kube-prometheus
+CHART VERSION: 11.0.2
+APP VERSION: 0.80.0
+
+Did you know there are enterprise versions of the Bitnami catalog? For enhanced secure software supply chain features, unlimited pulls from Docker, LTS support, or application customization, see Bitnami Premium or Tanzu Application Catalog. See https://www.arrow.com/globalecs/na/vendors/bitnami for more information.
+
+** Please be patient while the chart is being deployed **
+
+Watch the Prometheus Operator Deployment status using the command:
+
+    kubectl get deploy -w --namespace default -l app.kubernetes.io/name=kube-prometheus-operator,app.kubernetes.io/instance=prometheus
+
+Watch the Prometheus StatefulSet status using the command:
+
+    kubectl get sts -w --namespace default -l app.kubernetes.io/name=kube-prometheus-prometheus,app.kubernetes.io/instance=prometheus
+
+Prometheus can be accessed via port "9090" on the following DNS name from within your cluster:
+
+    prometheus-kube-prometheus-prometheus.default.svc.cluster.local
+
+To access Prometheus from outside the cluster execute the following commands:
+
+    echo "Prometheus URL: http://127.0.0.1:9090/"
+    kubectl port-forward --namespace default svc/prometheus-kube-prometheus-prometheus 9090:9090
+
+Watch the Alertmanager StatefulSet status using the command:
+
+    kubectl get sts -w --namespace default -l app.kubernetes.io/name=kube-prometheus-alertmanager,app.kubernetes.io/instance=prometheus
+
+Alertmanager can be accessed via port "9093" on the following DNS name from within your cluster:
+
+    prometheus-kube-prometheus-alertmanager.default.svc.cluster.local
+
+To access Alertmanager from outside the cluster execute the following commands:
+
+    echo "Alertmanager URL: http://127.0.0.1:9093/"
+    kubectl port-forward --namespace default svc/prometheus-kube-prometheus-alertmanager 9093:9093
+
+WARNING: There are "resources" sections in the chart not set. Using "resourcesPreset" is not recommended for production. For production installations, please set the following values according to your workload needs:
+  - alertmanager.resources
+  - blackboxExporter.resources
+  - operator.resources
+  - prometheus.resources
+  - prometheus.thanos.resources
++info https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:39.24 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                                                            READY   STATUS    RESTARTS   AGE
+alertmanager-prometheus-kube-prometheus-alertmanager-0          2/2     Running   0          12m
+kafka-controller-0                                              1/1     Running   0          17m
+keycloak-0                                                      1/1     Running   0          64m
+keycloak-postgresql-0                                           1/1     Running   0          64m
+loki-grafana-loki-compactor-64796d9995-lqrgq                    1/1     Running   0          17m
+loki-grafana-loki-distributor-f7f74c6-gn2j9                     1/1     Running   0          17m
+loki-grafana-loki-gateway-784f78b59d-fj86q                      1/1     Running   0          17m
+loki-grafana-loki-ingester-0                                    1/1     Running   0          17m
+loki-grafana-loki-promtail-gfjnt                                1/1     Running   0          17m
+loki-grafana-loki-querier-0                                     1/1     Running   0          17m
+loki-grafana-loki-query-frontend-6ddbd95dd9-j7zpl               1/1     Running   0          17m
+loki-memcachedchunks-0                                          1/1     Running   0          17m
+loki-memcachedfrontend-0                                        1/1     Running   0          17m
+prometheus-kube-prometheus-blackbox-exporter-785d9ffff9-66nbf   1/1     Running   0          12m
+prometheus-kube-prometheus-operator-65c8c89cdf-zqkvd            1/1     Running   0          12m
+prometheus-kube-state-metrics-797b95dfd-q7pmk                   1/1     Running   0          12m
+prometheus-node-exporter-n658c                                  1/1     Running   0          12m
+prometheus-prometheus-kube-prometheus-prometheus-0              2/2     Running   0          12m
+tempo-grafana-tempo-compactor-5f9c678b7f-vqh8v                  1/1     Running   0          15m
+tempo-grafana-tempo-distributor-767dc78df6-rqbs4                1/1     Running   0          15m
+tempo-grafana-tempo-ingester-0                                  1/1     Running   0          15m
+tempo-grafana-tempo-metrics-generator-d885b6dd8-t7phq           1/1     Running   0          15m
+tempo-grafana-tempo-querier-54b6d6f86c-8vhmg                    1/1     Running   0          15m
+tempo-grafana-tempo-query-frontend-945bbb6b7-lvr7j              1/1     Running   0          15m
+tempo-grafana-tempo-vulture-666445874b-cphrr                    1/1     Running   0          15m
+tempo-memcached-75cbd584cf-p96n5                                1/1     Running   0          15m
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:52.20 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm install grafana grafana
+NAME: grafana
+LAST DEPLOYED: Wed Feb 12 10:52:40 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: grafana
+CHART VERSION: 11.4.7
+APP VERSION: 11.5.1
+
+Did you know there are enterprise versions of the Bitnami catalog? For enhanced secure software supply chain features, unlimited pulls from Docker, LTS support, or application customization, see Bitnami Premium or Tanzu Application Catalog. See https://www.arrow.com/globalecs/na/vendors/bitnami for more information.
+
+** Please be patient while the chart is being deployed **
+
+1. Get the application URL by running these commands:
+    echo "Browse to http://127.0.0.1:8080"
+    kubectl port-forward svc/grafana 8080:3000 &
+
+2. Get the admin credentials:
+
+    echo "User: admin"
+    echo "Password: $(kubectl get secret grafana-admin --namespace default -o jsonpath="{.data.GF_SECURITY_ADMIN_PASSWORD}" | base64 -d)"
+# Note: Do not include grafana.validateValues.database here. See https://github.com/bitnami/charts/issues/20629
+
+
+WARNING: There are "resources" sections in the chart not set. Using "resourcesPreset" is not recommended for production. For production installations, please set the following values according to your workload needs:
+  - grafana.resources
++info https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:52.40 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ?
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:52.43 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? kubectl get pods
+NAME                                                            READY   STATUS    RESTARTS     AGE
+alertmanager-prometheus-kube-prometheus-alertmanager-0          2/2     Running   0            15m
+grafana-c46c8dfdb-xfpcv                                         1/1     Running   0            2m36s
+kafka-controller-0                                              1/1     Running   0            20m
+keycloak-0                                                      1/1     Running   0            67m
+keycloak-postgresql-0                                           1/1     Running   0            67m
+loki-grafana-loki-compactor-64796d9995-lqrgq                    1/1     Running   0            20m
+loki-grafana-loki-distributor-f7f74c6-gn2j9                     1/1     Running   0            20m
+loki-grafana-loki-gateway-784f78b59d-fj86q                      1/1     Running   0            20m
+loki-grafana-loki-ingester-0                                    1/1     Running   0            20m
+loki-grafana-loki-promtail-gfjnt                                1/1     Running   0            20m
+loki-grafana-loki-querier-0                                     1/1     Running   0            20m
+loki-grafana-loki-query-frontend-6ddbd95dd9-j7zpl               1/1     Running   0            20m
+loki-memcachedchunks-0                                          1/1     Running   0            20m
+loki-memcachedfrontend-0                                        1/1     Running   0            20m
+prometheus-kube-prometheus-blackbox-exporter-785d9ffff9-66nbf   1/1     Running   0            15m
+prometheus-kube-prometheus-operator-65c8c89cdf-zqkvd            1/1     Running   0            15m
+prometheus-kube-state-metrics-797b95dfd-q7pmk                   1/1     Running   0            15m
+prometheus-node-exporter-n658c                                  1/1     Running   0            15m
+prometheus-prometheus-kube-prometheus-prometheus-0              2/2     Running   0            15m
+tempo-grafana-tempo-compactor-5f9c678b7f-vqh8v                  1/1     Running   0            18m
+tempo-grafana-tempo-distributor-767dc78df6-rqbs4                1/1     Running   0            18m
+tempo-grafana-tempo-ingester-0                                  0/1     Running   1 (5s ago)   18m
+tempo-grafana-tempo-metrics-generator-d885b6dd8-t7phq           1/1     Running   0            18m
+tempo-grafana-tempo-querier-54b6d6f86c-8vhmg                    1/1     Running   0            18m
+tempo-grafana-tempo-query-frontend-945bbb6b7-lvr7j              1/1     Running   0            18m
+tempo-grafana-tempo-vulture-666445874b-cphrr                    1/1     Running   0            18m
+tempo-memcached-75cbd584cf-p96n5                                1/1     Running   0            18m
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:55.16 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ?
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:55.23 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? cd eazybank-services/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:55.51 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm/eazybank-services ? ? master ? ls
+accounts       cards          configserver   eurekaserver   gatewayserver  loans          message
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:55.54 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm/eazybank-services ? ? master ? cd ..
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:55.59 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? cd environments/
+                                                                                                                                                                                                                                        ?
+ls
+
+ ? 12/02/2025 ? ? 10:56.03 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm/environments ? ? master ? ls
+dev-env   prod-env  qa-env
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:56.04 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm/environments ? ? master ? helm install eazybank prod-env/
+NAME: eazybank
+LAST DEPLOYED: Wed Feb 12 10:56:31 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 10:56.32 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm/environments ? ? master ? helm list
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+eazybank        default         1               2025-02-12 10:56:31.3365507 -0500 EST   deployed        prod-env-0.1.0          1.0.0
+grafana         default         1               2025-02-12 10:52:40.0387854 -0500 EST   deployed        grafana-11.4.7          11.5.1
+kafka           default         1               2025-02-12 10:34:22.9770202 -0500 EST   deployed        kafka-31.3.1            3.9.0
+keycloak        default         1               2025-02-12 09:47:23.1955826 -0500 EST   deployed        keycloak-24.4.9         26.1.1
+loki            default         1               2025-02-12 10:35:13.9300704 -0500 EST   deployed        grafana-loki-4.7.4      3.3.2
+prometheus      default         1               2025-02-12 10:39:20.9283443 -0500 EST   deployed        kube-prometheus-11.0.2  0.80.0
+tempo           default         1               2025-02-12 10:36:57.6037035 -0500 EST   deployed        grafana-tempo-3.8.5     2.7.0
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 11:08.32 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm/environments ? ? master ? kubectl get pods
+NAME                                                            READY   STATUS             RESTARTS        AGE
+accounts-deployment-6949b48989-m7r58                            0/1     CrashLoopBackOff   6 (5m7s ago)    12m
+alertmanager-prometheus-kube-prometheus-alertmanager-0          2/2     Running            0               29m
+charts-deployment-fb67c5d54-ps2gr                               0/1     ImagePullBackOff   0               12m
+configserver-deployment-7b849f5ddd-sqktv                        0/1     Error              7 (5m11s ago)   12m
+eurekaserver-deployment-79b864f9b5-s9jns                        0/1     CrashLoopBackOff   7 (32s ago)     12m
+gatewayserver-deployment-5f89774455-zgjg9                       0/1     CrashLoopBackOff   7 (38s ago)     12m
+grafana-c46c8dfdb-xfpcv                                         1/1     Running            0               16m
+kafka-controller-0                                              1/1     Running            0               34m
+keycloak-0                                                      1/1     Running            0               81m
+keycloak-postgresql-0                                           1/1     Running            0               81m
+loans-deployment-76dbdb88fd-n4d5f                               0/1     CrashLoopBackOff   6 (2m25s ago)   12m
+loki-grafana-loki-compactor-64796d9995-lqrgq                    1/1     Running            0               33m
+loki-grafana-loki-distributor-f7f74c6-gn2j9                     1/1     Running            0               33m
+loki-grafana-loki-gateway-784f78b59d-fj86q                      1/1     Running            0               33m
+loki-grafana-loki-ingester-0                                    1/1     Running            0               33m
+loki-grafana-loki-promtail-gfjnt                                1/1     Running            0               33m
+loki-grafana-loki-querier-0                                     1/1     Running            0               33m
+loki-grafana-loki-query-frontend-6ddbd95dd9-j7zpl               1/1     Running            0               33m
+loki-memcachedchunks-0                                          1/1     Running            0               33m
+loki-memcachedfrontend-0                                        1/1     Running            0               33m
+message-deployment-75cc65998d-j29fp                             0/1     CrashLoopBackOff   6 (5m5s ago)    12m
+prometheus-kube-prometheus-blackbox-exporter-785d9ffff9-66nbf   1/1     Running            0               29m
+prometheus-kube-prometheus-operator-65c8c89cdf-zqkvd            1/1     Running            0               29m
+prometheus-kube-state-metrics-797b95dfd-q7pmk                   1/1     Running            0               29m
+prometheus-node-exporter-n658c                                  1/1     Running            0               29m
+prometheus-prometheus-kube-prometheus-prometheus-0              2/2     Running            0               29m
+tempo-grafana-tempo-compactor-5f9c678b7f-vqh8v                  1/1     Running            0               31m
+tempo-grafana-tempo-distributor-767dc78df6-rqbs4                1/1     Running            0               31m
+tempo-grafana-tempo-ingester-0                                  0/1     CrashLoopBackOff   7 (30s ago)     31m
+tempo-grafana-tempo-metrics-generator-d885b6dd8-t7phq           1/1     Running            0               31m
+tempo-grafana-tempo-querier-54b6d6f86c-8vhmg                    1/1     Running            0               31m
+tempo-grafana-tempo-query-frontend-945bbb6b7-lvr7j              1/1     Running            0               31m
+tempo-grafana-tempo-vulture-666445874b-cphrr                    1/1     Running            0               31m
+tempo-memcached-75cbd584cf-p96n5                                1/1     Running            0               31m
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 11:08.45 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm/environments ? ? master ? cd ..
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 11:09.14 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm delete tempo grafana-tempo/
+release "tempo" uninstalled
+Error: uninstall: Release name is invalid: grafana-tempo/
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 11:09.26 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ? helm delete tempo grafana-tempo/
+Error: uninstall: Release not loaded: tempo: release: not found
+                                                                                                                                                                                                                                        ?
+
+ ? 12/02/2025 ? ? 11:09.51 ? ? /cygdrive/c/MyProject/Learning/sourcecode/helm ? ? master ?

@@ -1,0 +1,95 @@
+Build your own helm chart , that will help to deploy all the services with single commands.
+
+1. Create heml chart for common chart for all micro services
+    helm create easybank-common
+    ( it will include the pre defile heml chart for create and web application, update/remove helm chart. )
+    Chart.yml - meta info about heml chart
+    value.yml - dynamic values for chart
+    charts/ - will have other charts which the current chart dependent on
+    templates/ - folder contains the manifest template yaml files
+
+   - delete all the folders and files from templates
+   - remove all the values from value.yml
+
+ 2. Create the template for that will be used for deployment i.e. configmap, deployment and service ( these 3 was only used for manual deployment in k8s)
+    inside templates folder.
+ 3. Values will passed for which ever chart will use this template , so no need to use the common value.yaml
+
+ 4. Create the folder for services
+ 5. Create the helm for all services and update the values.
+    Add any dependencies in the chart.yaml
+    dependencies:
+      - name: easybank-common  ---> chart-name
+        version: 0.1.0         ---> chart-version ( easybank-common/Chart.yml-version
+        repository: file://../../easybank-common/easybank-common
+
+    5.1 add the templates for micro service ( to deploy account ms only service and deployment needed)
+      and add define it.
+    5.2 update the values.yaml with service level values
+    5.3 compile helm chart for generating all the dependencies
+        helm dependencies build ( on the success build dependent charts will be generated and added to charts folder)
+
+    copy and change the values and name in charts ( common is already generate and same can be used , so no need to build it again )
+
+
+  6. Create helm chart for environment configurations
+  7. To verify generate helm template to verify the kubernetes manifest files ( final yaml files)
+   helm template . ( at the path of chart.yaml)
+
+
+  8. Get the other product helm chart from bitnami "https://github.com/abhiabcl/charts"
+     Add the helm chart for keycloak - update the clusterIp to loadbalance to expose this and configure the username and password to login in values yaml.
+     build it and install it.
+     helm dependencies build
+     helm install keycloak keycloak
+
+   -- Helm for kafka
+    copy bitnai helm chart & update the values as per requirement i..e replicaCount for controller, security SSL/PLAINTEXT
+    helm dependencies build
+    helm install kafka kafka
+
+   -- Helm for prometheus
+     copy and update the values as per requried i.e. additionalScrapeConfigs - enable and make in internal
+     add the configuration for internal jobList to scrap the metrices for local MS
+
+    helm dependencies build
+    helm install prometheus .\kube-prometheus\
+
+    To view do the port forward and view the targets
+    kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0 9090:9090
+
+    -- Helm for loki
+       default values should be fine for this , no changes needed for this
+
+        helm dependencies build
+        helm install loki ./grafana-loki
+
+
+    -- Helm for tempo
+      copy and update the values as per required i.e. otlp ( enabled the http & grpc protocol to communicate )
+
+        helm dependencies build
+        helm install tempo .\grafana-tempo\
+
+      Extract the tempo url , that is required for micro services to send the tracing details, get the services details "tempo-grafana-tempo-distributor"
+
+        kubectl get svc
+
+       update the service name in config-map of micro services i.e. otelExporterEndPoint: http://tempo-grafana-tempo-distributor:4317
+
+
+  -- Helm for Grafana
+     copy and update the values as per required details i.e. data sources for loki, tempo etc.
+
+     helm dependencies build
+     helm install grafana .\grafana\
+
+install complete solutions
+  1. keycloak - helm install keycloak keycloak
+     configure the user and roles
+  2. kafka - helm install kafka kafka
+  3. loki - helm install loki ./grafana-loki
+  4. tempo - helm install tempo ./grafana-tempo
+  5. prometheus - helm install prometheus ./kube-prometheus
+  6. grafana - helm install grafana grafana
+  7. micro-services - helm install eazybank ./prod-env
