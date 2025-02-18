@@ -53,14 +53,10 @@ endpoints:
   shutdown:
     enabled: true
 
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    fetchRegistry: true
-    registerWithEureka: true
-    serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
+  cloud:
+    kubernetes:
+      discovery:
+        all-namespaces: true
 
 info:
   app:
