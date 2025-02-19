@@ -107,10 +107,10 @@ smtp:
   enabled: false
   ## @param smtp.user SMTP user
   ##
-  user: user
+  user: "user"
   ## @param smtp.password SMTP password
   ##
-  password: password
+  password: "password"
   ## @param smtp.host Custom host for the smtp server
   ## e.g:
   ##   host: mysmtphost.com
